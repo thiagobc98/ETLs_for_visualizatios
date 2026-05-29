@@ -1,0 +1,22 @@
+Auditoria das tabelas
+
+- qtd de contratos por status tirando os excluidos  
+	-> (367 encerrados - 192 pausado - 1845 ativos)
+	-> SELECT codigo_contrato, id_contrato FROM contratos WHERE 	exc_contrato = 'F' AND fk_id_status_status_contrato = 2
+
+	-> SELECT codigo_contrato, id_contrato FROM contratos WHERE 	exc_contrato = 'F' AND fk_id_status_status_contrato = 3
+
+	-> SELECT codigo_contrato, id_contrato FROM contratos WHERE 	exc_contrato = 'F' AND fk_id_status_status_contrato = 4
+
+- qtd inquilinos por cpf tirando os excluidos 
+	-> SELECT id_inquilino, documento_inquilino, count(*) FROM inquilinos WHERE exc_inquilino = 'F' GROUP BY documento_inquilino
+
+- qtd de contratos com codigo null 
+	-> 194 contratos 
+	-> 109 sem os excluidos
+	-> SELECT codigo_contrato FROM contratos WHERE codigo_contrato IS NULL 	AND exc_contrato = 'F'
+
+- qtd de inquilinos sem doc 
+	-> SELECT documento_inquilino FROM inquilinos WHERE exc_inquilino = 'F' 	AND documento_inquilino IS NULL
+- qtd de pretendentes sem doc 
+	-> SELECT doc_pretendente FROM pretendentes WHERE doc_pretendente IS 	NULL 
