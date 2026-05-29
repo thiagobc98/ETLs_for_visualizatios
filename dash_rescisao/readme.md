@@ -30,5 +30,5 @@ Para executar o Dash Rescisão, você precisará das seguintes dependências:
 - Link da planilha de rescisão: [Planilha de dados - Rescisão (Devolução de chaves)].
 - **Script:**
     
-  - **Python:** 
-    1. `dash_rescisao\main.py`
+  - **Python :** 
+    1. `dash_rescisao\main.py` 
